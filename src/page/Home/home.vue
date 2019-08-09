@@ -239,7 +239,6 @@
 </template>
 <script>
 import YShelf from '/components/shelf'
-import product from '/components/product'
 import 'element-ui'
 import 'jquery'
 import axios from 'axios'
@@ -402,8 +401,7 @@ export default {
     })
   },
   components: {
-    YShelf,
-    product
+    YShelf
   },
   filters: {
     formatDate: formatDate // 最新事件的时间处理函数

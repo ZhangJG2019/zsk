@@ -4,10 +4,8 @@ const Index = () => import('/page/index.vue')
 const Login = () => import('/page/Login/login.vue')
 const register = () => import('/page/Login/register.vue')
 const Home = () => import('/page/Home/home.vue')
-const GoodS = () => import('/page/Goods/goods.vue')
 const order = () => import('/page/Order/order.vue')
 const user = () => import('/page/User/user.vue')
-const orderList = () => import('/page/User/children/order.vue')
 const information = () => import('/page/User/children/information.vue')
 const taskhall = () => import('/page/Taskhall/taskhall.vue')
 const Search = () => import('/page/Search/search.vue')
@@ -24,10 +22,6 @@ export default new Router({
     children: [{
         path: 'home',
         component: Home
-      },
-      {
-        path: 'goods',
-        component: GoodS
       },
 
       {
@@ -66,19 +60,12 @@ export default new Router({
     path: '/user',
     name: 'user',
     component: user,
-    redirect: '/user/orderList',
+    redirect: '/user/information',
     children: [{
-        path: 'orderList',
-        name: '订单列表',
-        component: orderList
-      },
-      {
         path: 'information',
         name: '账户资料',
         component: information
-      }
-
-      ]
+      }]
   },
   {
     path: '/taskhall',

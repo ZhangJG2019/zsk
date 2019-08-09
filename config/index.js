@@ -40,11 +40,18 @@ module.exports = {
           '^/front': '/' // 通过pathRewrite重写地址，将前缀/front转为/
         }
       },
-      '/apis': {
-        target: '192.168.1.157:8083', // 测试服务器
+      // '/apis': {
+      //   target: '192.168.1.157:8083', // 测试服务器
+      //   changeOrigin: true,
+      //   pathRewrite: {
+      //     '^/apis': '/' // 通过pathRewrite重写地址，将前缀/front转为/
+      //   }
+      // },
+      '/hall': {
+        target: 'http://192.168.1.162:8080', // 测试服务器
         changeOrigin: true,
         pathRewrite: {
-          '^/apis': '/' // 通过pathRewrite重写地址，将前缀/front转为/
+          '^/hall': '/' // 通过pathRewrite重写地址，将前缀/front转为/
         }
       }
     },

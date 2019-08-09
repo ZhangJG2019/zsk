@@ -11,6 +11,9 @@
               </router-link>
             </li>
             <li>
+              <a class="active">搜索结果</a>
+            </li>
+            <li>
               <a v-if="searching === true">拼命搜索中...</a>
               <a v-if="searching === false">共为您找到 {{ total }} 条信息</a>
             </li>
@@ -21,7 +24,26 @@
     </div>
 
     <div class="nav">
-      <div class="w">66666666666666</div>
+      <div class="w">
+        <a
+          href="javascript:;"
+          :class="{ active: sortType === 1 }"
+          @click="reset()"
+          >综合排序</a
+        >
+        <a
+          href="javascript:;"
+          @click="sortByPrice(1)"
+          :class="{ active: sortType === 2 }"
+          >时间从低到高</a
+        >
+        <a
+          href="javascript:;"
+          @click="sortByPrice(-1)"
+          :class="{ active: sortType === 3 }"
+          >时间从高到低</a
+        >
+      </div>
     </div>
 
     <div
@@ -55,7 +77,7 @@
         <div class="no-data">
           <img src="/static/images/no-search.png" />
           <br />
-          抱歉！没有为您找到相关的信息
+          抱歉！没有为您找到相关的商品
         </div>
         <section class="section">
           <y-shelf :title="recommendPanel.name">

@@ -339,7 +339,7 @@
 
     <y-footer></y-footer>
     <!-- iframe弹窗 1-->
-    <el-dialog :visible.sync="dialogVisible">
+    <!-- <el-dialog :visible.sync="dialogVisible">
       <div>
         <iframe
           src="http://47.105.75.254/index"
@@ -349,8 +349,19 @@
           class="iframe"
         ></iframe>
       </div>
-    </el-dialog>
+    </el-dialog> -->
     <!-- iframe弹窗 2·-->
+    <!-- pdf-iframe 1-->
+    <!-- <el-dialog :visible.sync="dialogVisible">
+      <div>
+        <a
+          href="../../../static/pdf/web/viewer.html?file=http://127.0.0.1:9999/static/pdf/web/222.doc"
+          target="_blank"
+          >Open</a
+        >
+      </div>
+    </el-dialog> -->
+    <!-- pdf-iframe 2-->
   </div>
 </template>
 <script>
@@ -361,10 +372,12 @@ import YFooter from '/common/footer'
 import $ from 'jquery'
 import 'element-ui'
 import axios from 'axios'
+import { taskHall } from '/api/index.js'
 export default {
   // 生命周期函数
   created() {
     this.getTaskHall()
+    this.test()
   },
   name: 'hello',
   data() {
@@ -388,8 +401,20 @@ export default {
     // 通过iframe领取任务 2
   },
   methods: {
+    // 测试任务大厅数据展示
+    test() {
+      let data = {
+        orderType: 'asc',
+        search: 'false',
+        order: 'convert(t.`create_time` USING gbk) COLLATE gbk_chinese_ci',
+        rows: '10',
+        page: '1'
+      }
+      taskHall(data).then(res => {
+        console.log(res)
+      })
+    },
     // iframe弹窗
-
     goBack() {
       this.goBackState = false
       this.iframeState = false

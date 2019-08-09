@@ -11,23 +11,24 @@ export const loginOut = (params) => {
 export const userInfo = (params) => {
   return http.fetchGet('/front/checkLogin', params)
 }
-// 首页数据
-// export const homemsg = (params) => {
-//   return http.fetchGet('/apis/cms/api/getColumnNewList?title=b', params)
-// }
+
 // 注册账号
 export const regist = (params) => {
   return http.fetchPost('/front/regist', params)
 }
 // 上传图片
 export const upload = (params) => {
-  return http.fetchPost('/front/member/imgaeUpload', params)
+  return http.fetchPost('/front/imgaeUpload', params)
 }
 // 修改头像
 export const updateheadimage = (params) => {
-  return http.fetchPost('/front/member/updateheadimage', params)
+  return http.fetchPost('/front/updateheadimage', params)
 }
 // 推荐板块
 export const recommend = (params) => {
-  return http.fetchGet('/front/goods/recommend', params)
+  return http.fetchGet('/front/recommend', params)
+}
+// 任务大厅
+export const taskHall = (params) => {
+  return http.fetchPost('/hall/task/taskList', params)
 }

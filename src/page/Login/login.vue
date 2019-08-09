@@ -101,14 +101,13 @@ export default {
       cart: [],
       loginPage: true,
       ruleForm: {
-        userName: '',
-        userPwd: '',
+        userName: 'admin',
+        userPwd: '123456',
         errMsg: ''
       },
       registered: {
-        userName: '',
-        userPwd: '',
-        userPwd2: '',
+        userName: '11',
+        userPwd: '111',
         errMsg: ''
       },
       autoLogin: false,
