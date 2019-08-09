@@ -372,12 +372,12 @@ import YFooter from '/common/footer'
 import $ from 'jquery'
 import 'element-ui'
 import axios from 'axios'
-import { taskHall } from '/api/index.js'
+// import { taskHall } from '/api/index.js'
 export default {
   // 生命周期函数
   created() {
     this.getTaskHall()
-    this.test()
+    // this.test()
   },
   name: 'hello',
   data() {
@@ -402,18 +402,18 @@ export default {
   },
   methods: {
     // 测试任务大厅数据展示
-    test() {
-      let data = {
-        orderType: 'asc',
-        search: 'false',
-        order: 'convert(t.`create_time` USING gbk) COLLATE gbk_chinese_ci',
-        rows: '10',
-        page: '1'
-      }
-      taskHall(data).then(res => {
-        console.log(res)
-      })
-    },
+    // test() {
+    //   let data = {
+    //     orderType: 'asc',
+    //     search: 'false',
+    //     order: 'convert(t.`create_time` USING gbk) COLLATE gbk_chinese_ci',
+    //     rows: '10',
+    //     page: '1'
+    //   }
+    //   taskHall(data).then(res => {
+    //     console.log(res)
+    //   })
+    // },
     // iframe弹窗
     goBack() {
       this.goBackState = false
